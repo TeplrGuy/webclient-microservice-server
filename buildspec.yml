@@ -31,7 +31,7 @@ phases:
     commands:
       - echo Entered the post_build phase...
       - echo Building the docker image..
-      - docker build -f Dockerfile -t $IMAGE_REPO_NAME .
+      - docker build -f Dockerfile -t webclient-microservice-server-repo .
       - echo Pushing the docker image to the ECR..
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME
